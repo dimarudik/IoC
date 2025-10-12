@@ -14,7 +14,7 @@ public class ConstructorAnnotatedOnlyTest {
 }
 @BublikBean
 class ConstructorAnnotatedOnly {
-    @Inject
+    @BublikInject
     public ConstructorAnnotatedOnly(){
     }
     public void call() {

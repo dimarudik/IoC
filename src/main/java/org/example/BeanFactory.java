@@ -14,7 +14,7 @@ public class BeanFactory {
         if (type.isAnnotationPresent(BublikBean.class)) {
 
             for (Constructor<?> constructor : type.getConstructors()) {
-                if (constructor.isAnnotationPresent(Inject.class)) {
+                if (constructor.isAnnotationPresent(BublikInject.class)) {
                     Class<?>[] constructorParameterTypes = constructor.getParameterTypes();
                     for (Class<?> aClass : constructorParameterTypes) {
                         Object bean = container.get(aClass);
@@ -30,7 +30,7 @@ public class BeanFactory {
             container.put(type, mainBean);
 
             for (Field field : type.getDeclaredFields()) {
-                if (field.isAnnotationPresent(Inject.class)) {
+                if (field.isAnnotationPresent(BublikInject.class)) {
                     Object bean = container.get(field.getType());
                     if (bean == null) {
                         Object tempBean = create(field.getType());
@@ -58,7 +58,7 @@ public class BeanFactory {
         try {
             Object instance = null;
             for (Constructor<?> constructor: type.getConstructors()) {
-                if (constructor.isAnnotationPresent(Inject.class)) {
+                if (constructor.isAnnotationPresent(BublikInject.class)) {
                     Class<?>[] constructorParameterTypes = constructor.getParameterTypes();
                     Object[] parameters = new Object[constructorParameterTypes.length];
                     for (int i = 0; i < constructorParameterTypes.length; i++) {

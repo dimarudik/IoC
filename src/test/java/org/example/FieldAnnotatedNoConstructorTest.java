@@ -15,7 +15,7 @@ public class FieldAnnotatedNoConstructorTest {
 
 @BublikBean
 class FieldAnnotatedNoConstructor {
-    @Inject
+    @BublikInject
     private InnerBean innerBean;
     public void call() {
         System.out.println("MainBean calling call");

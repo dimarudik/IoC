@@ -15,7 +15,7 @@ public class FieldAnnotatedDefaultConstructorTest {
 
 @BublikBean
 class FieldAnnotatedDefaultConstructor {
-    @Inject
+    @BublikInject
     private InnerBean innerBean;
     public FieldAnnotatedDefaultConstructor(){}
     public void call() {

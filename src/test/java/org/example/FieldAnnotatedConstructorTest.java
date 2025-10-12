@@ -14,7 +14,7 @@ public class FieldAnnotatedConstructorTest {
 }
 @BublikBean
 class FieldAnnotatedWithConstructor {
-    @Inject
+    @BublikInject
     private InnerBean innerBean;
     public FieldAnnotatedWithConstructor(){}
     public FieldAnnotatedWithConstructor(InnerBean innerBean) {
